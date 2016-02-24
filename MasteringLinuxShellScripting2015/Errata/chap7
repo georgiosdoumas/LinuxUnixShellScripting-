@@ -1,0 +1,34 @@
+page 80
+the screenshot at the bottom of the page could better be like 
+pi@pilabs ~ $ quote $USER
+'pi' pi@pilabs ~ $
+but it is not important. Obvioulsy the author had issued the command quote $USER in the previous line that does not
+show in the screenshot , and types it again a 2nd time. The readers will understand.
+
+page 86 
+The script is like this : 
+  function to_lower ()
+  {
+	input="$1"
+	output=$(tr [A-Z] [a-z] <<< "$input")
+	return $output
+  }
+  while true
+  do
+	read -p "Enter c to continue or q to exit: "
+	$REPLY=$(to_lower "$REPLY")
+	if [ $REPLY = "q" ] ; then
+	break
+but bash complains for the return usage (that it should be a numeric). So it is better to have the script like this: 
+  to_lower ()  ## no need to use the function keyword since we use the () , it is good for the reader to see it
+  {
+	input="$1"
+	output=$(tr [A-Z] [a-z] <<< "$input")
+	echo $output
+  }
+  while true
+  do
+	read -p "Enter c to continue or q to exit: "
+	REPLY=$(to_lower "$REPLY")       ##  NOT $REPLY=$( ...) . In page 88 it is correctly stated as REPLY=$(
+	if [ $REPLY = "q" ] ; then
+	break
