@@ -1,0 +1,27 @@
+page 92 Displaying received data on an interface
+Change the text 
+  In this case, grep is searching for a very simple regular expression, "RX packet". 
+to the following (the only correction is on word packets)
+  In this case, grep is searching for a very simple regular expression, "RX packets". 
+
+page 94
+A funny typo mistake in the screenshot:
+The line after the if :
+  echo "The user $REPLY exits"
+should be :
+  echo "The user $REPLY exists"
+And of course the output then would be 
+  The user pi exists
+
+page 100 Working with alternate spellings
+I suggest that the 2 examples are changed to : 
+  $ echo -e "color\ncolour\ncolar" | grep color
+and 
+  $ echo -e "color\ncolour\ncolar" | grep -E 'colou?r'
+
+page 104
+The last line of code , in the screenshot , is not in agreement with what was stated just before:
+   pi@pilabs~$ sed -i ' /^pi/ s@bash@sh@pg ' 
+It should be 
+   pi@pilabs~$ sed -i ' /^pi/ s@/bin/bash@/usr/bin/sh@ ' 
+The most important mistake is not that the book text has simply bash instead of /bin/bash , but the unnecessary pg at the end.
