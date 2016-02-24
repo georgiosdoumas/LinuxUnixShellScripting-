@@ -1,0 +1,35 @@
+page 19, 
+Substitute 
+  $ test -a echo
+with 
+  $ type -a echo
+
+page 23
+The text says :
+  "The read prompt cannot evaluate commands within the message string, such as we
+   used before."
+I am not sure what the writer wants to say , but I suggest to substitute it with 
+   The read prompt can also  evaluate commands within the message string, such as we
+   used before with echo. For example use this line in the previews script and test it:
+   read -p "Hello $USER , I am $(basename $0). May I ask your name: " name
+
+page 25 
+A small grammar mistake in the comments 
+  # The find command will copy files the match the
+correct it with :
+  # The find command will copy files that match the
+
+page 27 Version 2 – SSH
+Another small grammar mistake in the comments
+  # Script to prompt fossh connection
+correct it with 
+  # Script to prompt for ssh connection
+
+page 28 
+The last line of the script has missing spaces :
+  mysql -u $user_name -p$mysql_pwd$mysql_db -e"$mysql_cmd"
+A space must follow the last character of password value (how else will we know that the value finished?) , but I am not
+completely sure if another space is required after the -e. Maybe it is acceptable to open the " just after -e , with no space,
+but I would prefer for safety to put a space (there is no example without space in the 
+webpage http://dev.mysql.com/doc/refman/5.7/en/command-line-options.html ,and I did not install mysql to test it). So better use :
+  mysql -u $user_name -p$mysql_pwd $mysql_db -e "$mysql_cmd"
