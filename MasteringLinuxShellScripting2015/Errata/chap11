@@ -1,0 +1,22 @@
+page 135 Displaying the highest ranking IP address
+The final code has a variable , maxnumber, that is not used anywhere
+ { ip[$1]++ }
+ END {
+   for (i in ip)
+     if ( max < ip[i] ) {
+       max = ip[i]
+       maxnumber = i }
+ print i, " has accessed ", ip[i], " times." }
+It could be like this :
+ { ip[$1]++ }
+ END {
+   for (i in ip)
+     if ( max < ip[i] ) { max = ip[i] }
+ print i, " has accessed ", ip[i], " times." }
+I have test the above , and it works.
+But actually I suggest a different use of variable names ,to make things more clear:
+ { hits[$1]++ }
+ END {
+   for (ip in hits)
+     if ( max < hits[ip] ) { max = hits[ip] }
+ print ip, " has accessed the server ", hits[ip], " times." }
