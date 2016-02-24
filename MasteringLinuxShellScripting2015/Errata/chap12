@@ -1,0 +1,12 @@
+page 144 Manipulating the awk record separator to report on XML data
+The second sentence will make more sence if it is modified 
+    Although this is often what we want, where we work with tagged data, such as XML
+to this :
+    Although this is often what we want, here we work with tagged data, such as XML
+
+page 146 
+The 1st line of code is missing the space in OFS
+   BEGIN { FS="[><]"; RS="\n\n" ; OFS=""; }
+should be 
+   BEGIN { FS="[><]"; RS="\n\n" ; OFS="  "; }
+
