@@ -1,0 +1,16 @@
+page 54 Special parameters
+A space missing at bullet that explains B. I also suggest a small change so the final sentence from:
+  "- B: This allows the brace expansion or mkdirdir{1,2} where we create dir1 and dir2."
+to be like this: 
+  "- B: This allows the brace expansion or mkdir somedir{1,2} where we create somedir1 and somedir2."
+
+page 59 Pattern matching
+The command at the end of page :
+   [[ $FILE = *.pl ]] &&cp"$FILE" scripts/
+has a space missing after cp, but also does NOT produce any result if typed simply like this in a terminal.
+I suggest to use the following example :
+(The space between && and cp can be omitted , so I left it without space for the reader to see that it is not needed.)
+   $ for FILE in * ; do [[ $FILE = *.pl ]] &&cp "$FILE" scripts/ ; done
+   If you do not have any .pl files in your current directory, create some with 
+   $ touch file{1..3}.pl
+This way the reader will have something to really test on , and will also learn about the {n..m} construct.
