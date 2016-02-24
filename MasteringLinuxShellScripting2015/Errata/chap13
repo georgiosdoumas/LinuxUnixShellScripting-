@@ -1,0 +1,15 @@
+page 155 Creating arrays
+The last line of code has something to be avoided (propably just a miss-typing):
+  print("$user[0] $user[1] is @user[2]\n");
+Although it works as it is , if we have the warnings turned on with :
+$ perl -w array.pl
+we get suggestions to write the last element as $user[2] .
+So better have it as :
+  print("$user[0] $user[1] is $user[2]\n");
+
+
+page 159 Creating the function
+I tested the code with 
+  use warnings;
+and it complains about the fact that the function is called before it is defined.
+So is it really a good advice to tell the user that he can define functions at the end of his program?
