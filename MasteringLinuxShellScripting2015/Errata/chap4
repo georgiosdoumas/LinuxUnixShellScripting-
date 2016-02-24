@@ -1,0 +1,15 @@
+page 45 Abbrevietions
+Change : "then you are using the improved vim or Vi." , with : "then you are using the improved Vi or vim."
+
+page 46 , top 
+A space has been forgotten. Change 
+   abbr <shortcut><string>
+with 
+   abbr <shortcut>  <string>
+
+page 46 
+The following line has many problems: 
+  abbr _if if [-z $1];then<CR>echo "> $0 <name><CR>exit 2<CR>fi
+Correct is :
+  abbr _if if [ -z $1 ];then<CR>echo "> $0 <name>"<CR>exit 2<CR>fi
+(spaces between [ and -z are important , also the closing " for echo . In page 47 a similar multiline code-snippet appears correct)
