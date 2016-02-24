@@ -1,0 +1,32 @@
+page 67 
+The script at the bottom of page has a missing space in the delimiter 
+  $ for user in $(who | cut -f1 -d"") ; do
+but that is not so important because in the screenshot of page 68 the correct form is shown. 
+What is more important is that if we execute that script as a simple user , and there are other users also 
+logged in , we will not have access to their current working directories.
+So either the line should be like 
+  # for user in $(who | cut -f1 -d" ") ; do
+to imply that we have changed to root user , or again it is a nice opportunity to teach something to the reader
+and have the line as 
+  $ su -c ' for user in $(who | cut -f1 -d" ") ; do \
+  lsof -u $user -a -c bash | grep cwd \
+  done '
+This way the reader will have the chance to become familiar with the 
+su -c "command1; command2" 
+or alternatively 
+su -c 'command1; command2' 
+if somewhere inside the command1 / command2 there are double quotes " used. 
+
+page 72 
+There is a typo mistake in the screenshot (how can that have happened?!)
+The line 
+  > ping -c1 "$server" && servers_up="servers_up $servers"
+should be 
+  > ping -c1 "$server" && servers_up="servers_up $server"
+
+
+page 73 
+At the end of the script the imput file is missing , so :
+  done
+should be replaced with :
+  done < $1
