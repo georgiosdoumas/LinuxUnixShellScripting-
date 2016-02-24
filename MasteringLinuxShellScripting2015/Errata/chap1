@@ -1,0 +1,103 @@
+page [ vii ]
+What this book covers
+Chapter2 "...asking for installation directories or server's tp connect to."
+		 "...asking for installation directories or servers to connect to."
+
+Chapter 1
+page 2 :
+The text of the book has no space before 'BASH_ , it is like this:
+$ env 'x=() { :;}; echo vulnerable''BASH_FUNC_x()=() { :;}; echo vulnerable' bash -c "echo test"
+But the correct is to have a space (do not hesitate to put 2 spaces for clarity in the printed and pdf format, like I did here):
+$ env 'x=() { :;}; echo vulnerable'  'BASH_FUNC_x()=() { :;}; echo vulnerable' bash -c "echo test"
+With the space , the reader will get the output of warning and error for the functions definitions.
+
+page 3 : 
+It is always good to avoid the code breaking in more than 1 line. So the code that appears like this:
+cd /tmp; rm -f /tmp/echo; env 'x=() { (a)=>\' bash -c "echo date"; cat /
+tmp/echo
+would be better presented like this (putting the prompt $ also is helpfull for the reader):
+$ cd /tmp; 
+$ rm -f /tmp/echo;env 'x=() { (a)=>\' bash -c "echo date";cat /tmp/echo
+
+The text says : 
+"If the output from either of these command lines is different, then your system ..."
+We could enhance it by mentioning :
+"If the output from either of these command lines is different,for example if in the last command you have the output of current date,
+instead of the word : date ,or if in the previous command you see the word vulnerable along with some syntax errors,  then your system ..."
+
+page 5, Command PATH
+  The sentence 
+"Linux will check for executables in the PATH environment only when the full or
+relative path to the program is supplied" 
+is ambigous , and because we want the reader to interpret it as :
+"Linux will check for executables in the PATH environment only, when the full or
+relative path to the program is supplied."
+and not as the confusing :
+"Linux will check for executables in the PATH environment, only when the full or
+relative path to the program is supplied" 
+it is better to put that comma after "only,".
+  And the sentence :
+"This appends the current directory to the value of the PATH variable each item the
+PATH is separated using the colon.Now, your PATH is updated to include the current
+working directory ..."
+should be changed to 
+"This appends the current directory to the value of the PATH variable, each item in the
+PATH is separated using the colon.Now,and for your current login session only, your PATH is 
+updated to include the current working directory ..."
+
+page 6, Configuring vim
+Spaces have been forgotten in the contents of .vimrc! Correct is : 
+ When these options are set, the $HOME/.vimrc file should look similar to this:
+ set showmode nohlsearch
+ set autoindent tabstop=4
+ set expandtab
+ syntax on
+
+page 6, Configuring nano 
+Similarly the spaces have dissapeared! Correct is :
+ set autoindent
+ set tabsize 4
+ include /usr/share/nano/sh.nanorc
+
+For both the above cases , I have not checked the downloadable example code in the website.
+
+page 8 , just after the picture  :
+"For the rest of the book, we will be working on the command line in and in vim"
+Correct is 
+"For the rest of the book, we will be working on the command line in nano and in vim"
+
+page 9, Hello World 
+First bullet :
+"The shebang instructs the system to the interpreter to execute the script."
+Suggestion for improvement:
+"The shebang instructs the system which interpreter to use while executing the script."
+
+
+page 10 , Checking the exit status
+A space is missing after $?
+Current text:       "To read the exit code from our script explicitly,we can view the $?variable,as shown..."
+Correct should be : "To read the exit code from our script explicitly,we can view the $? variable,as shown..."
+
+page 11 , Ensuring a unique name
+Substitute : "and building commands," on the 4th line , with "and builtin commands,"
+Substitute : "where we do not file extensions," on the 7th line , with "where we do not use file extensions,"
+
+page 12, Running the script with arguments
+Substitute 
+  $ hello1.shfred
+with ( a space was lost!)
+  $ hello1.sh fred
+
+page 12, after the table
+Suggestion for improvement 
+The text says : "Let's first copy the script, add in the execute permissions,"
+It would be a good idea to put a numbered footnote after the word permissions , with number [1] , 
+and at the end of the page have the note saying:
+[1] You can copy the file and preserve the executable ermissions with cp -p , check the man pages for cp for details. 
+
+page 13 
+Again missing spaces in the middle of the page
+$ hello2.shfredwilma  betty barney
+but now it is not important ,because everything is clear in the following screenshot:
+$ hello2.sh fred wilma  betty barney
+so even newbbies will have no frushtration.
