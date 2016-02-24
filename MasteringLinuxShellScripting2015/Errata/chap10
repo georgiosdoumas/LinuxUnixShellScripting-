@@ -1,0 +1,13 @@
+page 126
+In the middle of the page (before the 2nd screenshot) there is an extra " :
+  $ awk 'BEGIN {FS=":" ; printf "%10s %4s %17s\n",""Name","UID","Shell"}
+but in the screenshot it is displayed corectly as :
+  $ awk 'BEGIN {FS=":" ; printf "%10s %4s %17s\n","Name","UID","Shell"}
+
+page 126 
+2nd line from bottom missing a )
+     > BEGIN {FS=":" ; green("    Name:     UID:      Shell:"}
+should be 
+     > BEGIN {FS=":" ; green("    Name:     UID:      Shell:") }
+Again this is correctly displayed in the screenshot of next page , so it is not important , readers will see it easily.
+
