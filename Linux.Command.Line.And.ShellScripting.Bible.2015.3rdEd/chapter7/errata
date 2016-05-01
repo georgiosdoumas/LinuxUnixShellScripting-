@@ -1,0 +1,20 @@
+page 174 
+Creating new groups
+The book gives 2 examples (after creating a group "shared" , that as a freshly created group has no members initially) 
+# /usr/sbin/usermod -G shared rich
+# /usr/sbin/usermod -G shared test
+and with the above code , someone would manage to make user rich a member of the group shared and also user test a member
+of the group shared. That is good as long as the user "rich" and "test" were initially members of no other group but only 
+of the default group that has the same name as the user. 
+But if for example user "rich" was all ready member of a group "testgroup" , and we wanted to make him also a member of group
+shared , without removing him from group "testgroup" , then the above command would not work , because it would replace
+group "testgroup" with "shared". The way to do it would be 
+# /usr/sbin/usermod -a -G shared rich
+It is unfortunate that the text of the book keeps things confused by saying (just before the NOTE on page 174): 
+"The -G parameter in usermod appends the new group to the list of groups for the user account."
+If a group is not mentioned in a comma seperated list of values after -G , it will be removed.
+So either we have to 
+# /usr/sbin/usermod -a -G shared rich
+or 
+# /usr/sbin/usermod  -G testgroup,shared rich
+if we want to keep membership on existing testgroup for user "rich".
