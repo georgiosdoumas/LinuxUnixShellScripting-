@@ -1,0 +1,10 @@
+page 455
+$ ./test5
+Enter a value: 200
+doubling the value
+The new value is 1
+  The correct output is :
+Enter a value: 200
+doubling the value
+The new value is 144
+  because 400-256=144
