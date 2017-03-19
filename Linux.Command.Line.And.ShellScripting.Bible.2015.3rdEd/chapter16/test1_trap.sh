@@ -1,8 +1,9 @@
 #!/bin/bash
 ## !/usr/bin/ks  # this should be the 1st line of a korn shell script
+## The original example of the book , named test1 , is trivial , so I wanted to play around and expand it! 
 # Testing signal trapping
 # trap "echo ' Sorry but I am not going to finish! I have trapped Ctrl-C'" SIGINT
-# or equivalently : 
+# or equivalently substitute SIGINT with number 2  : 
 # trap "echo ' Sorry but I am not going to finish! I have trapped Ctrl-C'" 2
 # another multi-command example is : 
 # trap " echo 'You pressed Ctrl-C! ' > ch16output_trap ; exit" SIGINT
