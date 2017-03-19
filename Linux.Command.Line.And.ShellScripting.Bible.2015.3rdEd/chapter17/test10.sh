@@ -2,7 +2,7 @@
 # array variable to function test
 function testit {
     local newarray
-    # newarray=(`echo "$@"`)
+    # newarray=(`echo "$@"`) #this is one way to do it , or : 
     newarray=($(echo "$@"))
     echo "The new array value is: ${newarray[*]}"
 }
