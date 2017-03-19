@@ -1,0 +1,3 @@
+page 462 , the script test10 has an error on the line 
+newarray=(;'echo "$@"')
+See file test10.sh in this folder for a correct implementation
