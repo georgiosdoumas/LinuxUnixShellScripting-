@@ -1,0 +1,10 @@
+Page 687 Creating a user account
+the command :
+mysql> GRANT SELECT,INSERT,DELETE,UPDATE ON test.* TO test IDENTIFIED by 'test';
+should be 
+mysql> GRANT SELECT,INSERT,DELETE,UPDATE ON mytest.* TO test IDENTIFIED by 'test';
+because the database name created in the previous page was "mytest".
+For the rest of the command , the first test is for the username and the second 'test' is for the password of the username test.
+
+This kind of things annoy me when I find them in books or guides , I would prefer something like : 
+mysql> GRANT SELECT,INSERT,DELETE,UPDATE ON dbtest.* TO usertest IDENTIFIED by 'usertestpasswd';
